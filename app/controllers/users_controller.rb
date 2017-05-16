@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
-      flash[:success] = "Welcome to Lil' Twitter!"
+      flash[:success] = "Welcome to Snippy!"
       redirect_to @user
     else
       render 'new'

@@ -1,0 +1,18 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        <%= @user.username %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.snippets.any? %>
+      <h3>Snippets (<%= @user.snippets.count %>)</h3>
+      <ol class="snippets">
+        <%= render @snippets %>
+      </ol>
+      <%= will_paginate @snippets %>
+    <% end %>
+  </div>
+</div>
