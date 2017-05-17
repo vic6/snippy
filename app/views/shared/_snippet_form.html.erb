@@ -2,5 +2,6 @@
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: 'Optional', class: 'form-control' %>
+  <%= f.label 'New Snippet' %>
   <%= f.text_area :content, class: 'form-control' %>
 <% end %>
