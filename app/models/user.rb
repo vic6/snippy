@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
-  has_many :snippets
+  has_many :snippets, dependent: :destroy
 
   before_save { email.downcase! }
   validates :username, presence: true, length: { maximum: 50 }

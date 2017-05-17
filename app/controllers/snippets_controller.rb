@@ -1,4 +1,5 @@
 class SnippetsController < ApplicationController
+  before_action :correct_user, only: :destroy
   def index
   end
 
@@ -19,11 +20,19 @@ class SnippetsController < ApplicationController
   end
 
   def destroy
+    @snippet.destroy
+    flash[:success] = 'Snippet deleted'
+    redirect_to request.referrer || root_url
   end
 
   private
 
   def snippet_params
     params.require(:snippet).permit(:title, :content)
+  end
+
+  def correct_user
+    @snippet = current_user.snippets.find_by(id: params[:id])
+    redirect_to root_url if @snippet.nil?
   end
 end
