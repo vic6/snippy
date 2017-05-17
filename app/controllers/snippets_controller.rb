@@ -1,6 +1,8 @@
 class SnippetsController < ApplicationController
   before_action :correct_user, only: :destroy
+
   def index
+    @snippets = Snippet.paginate(page: params[:page])
   end
 
   def new
