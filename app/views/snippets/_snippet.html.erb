@@ -1,17 +1,10 @@
 <div class="container">
   <div class="row">
-
-
       <tbody>
-
         <tr>
-
-          <td><%= snippet.title %></td>
+          <td><%= link_to snippet.title, snippet_path(snippet) %></td>
           <td><%= link_to snippet.user.username, snippet.user %></td>
-          <td>
-            <a href="#">Aspx.pdf</a>
-          </td>
+          <td><%= time_ago_in_words(snippet.created_at.to_date) %> ago</td>
 
         </tr>
-
     </div>
