@@ -1,14 +1,17 @@
-<li id="snippet-<%= snippet.id %>">
-  <span class="user"><%= link_to snippet.user.username, snippet.user %></span>
-  <span class="content">
-    <%= snippet.title %>
-    <%= snippet.content %>
-  </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(snippet.created_at) %> ago.
-    <% if current_user?(snippet.user) %>
-      <%= link_to 'delete', snippet, method: :delete,
-                                       data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </span>
-</li>
+<div class="container">
+  <div class="row">
+
+
+      <tbody>
+
+        <tr>
+
+          <td><%= snippet.title %></td>
+          <td><%= link_to snippet.user.username, snippet.user %></td>
+          <td>
+            <a href="#">Aspx.pdf</a>
+          </td>
+
+        </tr>
+
+    </div>

@@ -5,6 +5,10 @@ class SnippetsController < ApplicationController
     @snippets = Snippet.paginate(page: params[:page])
   end
 
+  def show
+    
+  end
+
   def new
   end
 
