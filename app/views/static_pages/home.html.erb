@@ -1,1 +1,5 @@
-<%= render 'shared/signup_form' %>
+<% if logged_in? %>
+  <%= render 'shared/snippet_form' %>
+<% else %>
+  <%= render 'shared/signup_form' %>
+<% end %>

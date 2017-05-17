@@ -5,10 +5,10 @@
         <%= @user.username %>
       </h1>
     </section>
+    <%= render 'shared/snippet_form' %>
   </aside>
   <div class="col-md-8">
     <% if @user.snippets.any? %>
-      <h3>Snippets (<%= @user.snippets.count %>)</h3>
       <ol class="snippets">
         <%= render @snippets %>
       </ol>
