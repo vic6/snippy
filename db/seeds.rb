@@ -3,3 +3,21 @@ User.create!(username: "Lvl 80 Admin",
              password: "password",
              password_confirmation: "password",
              admin: true)
+
+# create 50 users
+50.times do |num|
+  name = Faker::Name.name
+  email = "test-#{num + 1}@liltwitter.com"
+  password = 'password'
+  User.create!(username: name,
+               email: email,
+               password: password,
+               password_confirmation: password)
+end
+
+users = User.order(:created_at).take(8)
+50.times do
+  title = Faker::Book.title
+  content = Faker::ChuckNorris.fact
+  users.each { |user| user.snippets.create!(title: title, content: content) }
+end
