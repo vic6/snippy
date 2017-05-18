@@ -17,7 +17,8 @@ end
 
 users = User.order(:created_at).take(8)
 50.times do
-  title = Faker::Book.title
-  content = Faker::ChuckNorris.fact
-  users.each { |user| user.snippets.create!(title: title, content: content) }
+  users.each do |user|
+    user.snippets.create!(title: Faker::Book.title,
+                          content: Faker::ChuckNorris.fact)
+  end
 end
