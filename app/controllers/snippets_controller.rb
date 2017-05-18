@@ -23,6 +23,17 @@ class SnippetsController < ApplicationController
   end
 
   def edit
+    @snippet = Snippet.find(params[:id])
+  end
+
+  def update
+    @snippet = Snippet.find(params[:id])
+    if @snippet.update_attributes(snippet_params)
+      flash[:success] = 'Snippet updated'
+      redirect_to snippets_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
