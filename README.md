@@ -25,3 +25,5 @@ $ rails server
 ```
 
 Open a browser and go to localhost:3000
+
+Admin user: email: vic@admin.com, password: password
