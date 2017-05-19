@@ -1,5 +1,6 @@
 ## Instructions for use in local server
 
+Tested using Rails 5.1.1
 To get started with the app, clone the repo and then install the needed gems:
 
 ```
