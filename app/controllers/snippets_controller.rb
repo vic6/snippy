@@ -1,5 +1,5 @@
 class SnippetsController < ApplicationController
-  before_action :correct_user, only: :destroy
+  before_action :admin_user, only: [:destroy, :edit]
 
   def index
     @snippets = Snippet.paginate(page: params[:page])
@@ -37,6 +37,7 @@ class SnippetsController < ApplicationController
   end
 
   def destroy
+    @snippet = Snippet.find(params[:id])
     @snippet.destroy
     flash[:success] = 'Snippet deleted'
     redirect_to request.referrer || root_url
